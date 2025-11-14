@@ -1,0 +1,20 @@
+.timecard-container {
+  display: grid;
+  height: 75%;
+  margin-top: 2vh;
+  grid-template-columns: auto auto auto;
+}
+
+.timecard {
+  display: flex;
+  height: 75%;
+  width: 80%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3vh;
+  border: 2px solid rgb(12, 12, 132);
+  align-self: center;
+  justify-self: center;
+  border-radius: 20px;
+}

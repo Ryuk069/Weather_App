@@ -1,0 +1,50 @@
+.day-card {
+    /* border: 2px solid; */
+    width: 5.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.day-temp {
+    /* border: 2px solid; */
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.day-name {
+    font-size: 0.8rem;
+}
+
+.day-condition {
+    font-size: 0.6rem;
+    text-transform: capitalize;
+}
+
+.day-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid;
+}
+
+.day-card:hover {
+  transform: translateY(-3px);
+}
+
+.day-card.selected {
+  border: 2px solid #007bff;
+  background: rgba(0, 123, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  transform: scale(1.05);
+  color: mediumorchid;
+}
