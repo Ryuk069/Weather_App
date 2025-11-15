@@ -10,7 +10,6 @@ function App() {
       <Display />
     </div>
   )
-  // Ashish kumar
 }
 
 export default App
