@@ -1,11 +1,25 @@
-.app {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
-    position: absolute;
-    z-index: 0;
-    color: #e8e6e3;
+ @import "tailwindcss";
+
+
+ *{
+   color: white;
+   }
+ 
+
+ .bg-bl {
+   background-color: rgb(42, 42, 42);
+ }
+
+ .black {
+   background-color: black;
+ }
+
+ .scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.md\:justify-center {
+    @media (width >=512px) {
+        justify-content: center;
+    }
 }

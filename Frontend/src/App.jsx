@@ -1,12 +1,11 @@
-import { useState } from 'react'
-import Display from './components/display/display.jsx'
+import Display from './components/display.jsx'
 import './App.css'
 
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className='app'>
+    <div className='h-screen bg-black flex justify-center items-center'>
       <Display />
     </div>
   )
