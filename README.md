@@ -2,6 +2,14 @@
 
 A modern, full-stack weather application that provides real-time weather forecasts and hourly predictions. Built with React, Vite, Express.js, and the OpenWeatherMap API.
 
+## 📸 Screenshots
+
+### Desktop
+![Desktop](Frontend\public\Desktop_Screenshot.png)
+
+### Weather Details
+
+
 
 ## 🎯 Project Overview
 

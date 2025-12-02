@@ -9,7 +9,7 @@ const apikey = process.env.api;
 
 app.use(
   cors({
-    origin: "http://localhost:5173"
+    origin: "http://localhost:5173",
   })
 );
 
@@ -39,8 +39,12 @@ async function fetchWeather(city) {
 }
 
 function wait(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+app.get("/",(req,res) => {
+  console.log("hello");
+})
 
 app.get("/api/weather/:city", async (req, res) => {
   const city = req.params.city.trim().toLowerCase();
@@ -55,7 +59,7 @@ app.get("/api/weather/:city", async (req, res) => {
 
   // Group by date
   const grouped = {};
-  trimmedList.forEach(item => {
+  trimmedList.forEach((item) => {
     const date = item.dt_txt.split(" ")[0];
     if (!grouped[date]) grouped[date] = [];
     grouped[date].push(item);
@@ -64,16 +68,16 @@ app.get("/api/weather/:city", async (req, res) => {
   const entries = Object.entries(grouped);
 
   const daily = entries.slice(0, 5).map(([date, items], index, arr) => {
-    const avg = arr => arr.reduce((sum, v) => sum + v, 0) / arr.length;
+    const avg = (arr) => arr.reduce((sum, v) => sum + v, 0) / arr.length;
 
-    const avgTemp = +(avg(items.map(i => i.main.temp)).toFixed(2));
-    const avgFeelsLike = +(avg(items.map(i => i.main.feels_like)).toFixed(2));
-    const avgHumidity = Math.round(avg(items.map(i => i.main.humidity)));
-    const avgWind = +(avg(items.map(i => i.wind.speed)).toFixed(2));
+    const avgTemp = +avg(items.map((i) => i.main.temp)).toFixed(2);
+    const avgFeelsLike = +avg(items.map((i) => i.main.feels_like)).toFixed(2);
+    const avgHumidity = Math.round(avg(items.map((i) => i.main.humidity)));
+    const avgWind = +avg(items.map((i) => i.wind.speed)).toFixed(2);
 
     // Most frequent condition + icon
     const conditionCount = {};
-    items.forEach(i => {
+    items.forEach((i) => {
       const key = i.weather[0].main + "|" + i.weather[0].icon;
       conditionCount[key] = (conditionCount[key] || 0) + 1;
     });
@@ -89,15 +93,15 @@ app.get("/api/weather/:city", async (req, res) => {
       hourly = hourly.concat(nextDayItems.slice(0, 6 - hourly.length));
     }
 
-    hourly = hourly.map(i => ({
+    hourly = hourly.map((i) => ({
       time: i.dt_txt,
-      temp: +(i.main.temp.toFixed(2)),       
-      feels_like: +(i.main.feels_like.toFixed(2)),
+      temp: +i.main.temp.toFixed(2),
+      feels_like: +i.main.feels_like.toFixed(2),
       humidity: i.main.humidity,
       wind: i.wind.speed,
       condition: i.weather[0].main,
       description: i.weather[0].description,
-      icon: i.weather[0].icon
+      icon: i.weather[0].icon,
     }));
 
     return {
@@ -108,7 +112,7 @@ app.get("/api/weather/:city", async (req, res) => {
       avgWind,
       condition,
       icon,
-      hourly
+      hourly,
     };
   });
 

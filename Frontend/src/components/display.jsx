@@ -111,7 +111,7 @@ function Display() {
     <div className="h-full w-full xl:h-7/10 xl:w-65/100 xl:rounded-4xl xl:flex xl:border-2">
       {errorMessage ? (
         <div className="flex flex-col items-center justify-center w-full h-full text-3xl text-red-500">
-          <img src={loading} alt="loading" className="w-16 h-16 mb-3" />
+          {/* <img src={loading} alt="loading" className="w-16 h-16 mb-3" /> */}
 
           <div className="text-2xl">{errorMessage}</div>
         </div>
