@@ -129,7 +129,7 @@ function Display() {
               <DateDisplay />
             </div>
 
-            <div className="h-9/10 flex flex-col gap-5 border-b-2 rounded-4xl">
+            <div className="h-9/10 flex flex-col gap-5 border-b-2 md:border-none rounded-4xl">
               {dayData && (
                 <TempStats
                   temp={dayData.avgTemp}

@@ -1,3 +1,5 @@
+// Use this data if you dont't want to make an api call to openweathermap.org
+
 const data = {
     "city": "Delhi",
     "daily": [

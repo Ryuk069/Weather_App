@@ -5,10 +5,7 @@ A modern, full-stack weather application that provides real-time weather forecas
 ## 📸 Screenshots
 
 ### Desktop
-![Desktop](Frontend\public\Desktop_Screenshot.png)
-
-### Weather Details
-
+![Desktop](./Frontend/public/Desktop_Screenshot.png)
 
 
 ## 🎯 Project Overview

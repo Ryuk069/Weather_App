@@ -11,7 +11,7 @@ function DayCards({ data, onSelectDayData }) {
   }
 
   return (
-    <div className="w-screen md:w-7/10 lg:w-10/10 flex md:items-center justify-center md:justify-center gap-4 overflow-x-auto overflow-y-hidden scrollbar-hide">
+    <div className="w-screen md:w-7/10 lg:w-10/10 flex md:items-center md:justify-center gap-4 overflow-x-auto overflow-y-hidden scrollbar-hide">
       {data?.map((day, index) => (
         <div
           key={day.date}
