@@ -8,9 +8,7 @@ const app = express();
 const apikey = process.env.api;
 
 app.use(cors({
-  origin: [
     'https://weather-app-nine-silk-56.vercel.app/'
-  ]
 })
 );
 
