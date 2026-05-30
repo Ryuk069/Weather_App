@@ -171,7 +171,7 @@ function Display() {
               )}
             </div>
 
-            <div className="h-7/10 border-t-2 rounded-t-4xl flex flex-col items-center gap-10 lg:gap-5 mt-5 lg:mt-0">
+            <div className="h-7/10 border-t-2 rounded-t-4xl flex flex-col items-center gap-10 lg:gap-5 my-5 lg:mt-0">
               <div className="text-center text-2xl pt-3">Hourly Forecast</div>
               <div className="w-full">
                 <TimeCard
