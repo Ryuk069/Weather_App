@@ -8,9 +8,7 @@ const app = express();
 const apikey = process.env.api;
 
 app.use(
-  cors({
-    origin: "http://localhost:4173",
-  })
+  cors()
 );
 
 async function fetchWeather(city) {

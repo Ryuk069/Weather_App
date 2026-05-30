@@ -6,7 +6,7 @@ function App() {
 
 
   return (
-    <div className='h-screen bg-black flex justify-center items-center'>
+    <div className='h-screen bg-black flex justify-center items-center overflow-scroll scrollbar-hide'>
       <Display />
     </div>
   )
