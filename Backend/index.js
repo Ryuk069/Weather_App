@@ -4,10 +4,17 @@ import cors from "cors";
 
 configDotenv();
 
+
+
 const app = express();
 const apikey = process.env.api;
+const PORT = process.env.PORT || 3000;
 
-app.use(cors()
+
+app.use(
+  cors({
+    origin: process.env.url,
+  })
 );
 
 async function fetchWeather(city) {
@@ -39,9 +46,10 @@ function wait(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-app.get("/",(req,res) => {
-  console.log("hello");
-})
+app.get("/", (req, res) => {
+  console.log("Request from:", req.ip);
+  res.send("OK");
+});
 
 app.get("/api/weather/:city", async (req, res) => {
   const city = req.params.city.trim().toLowerCase();
@@ -117,4 +125,4 @@ app.get("/api/weather/:city", async (req, res) => {
   res.json({ city: raw.city.name, daily });
 });
 
-app.listen(3000, () => console.log("Server running on port 3000"));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
