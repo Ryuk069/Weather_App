@@ -7,13 +7,9 @@ A modern, full-stack weather application that provides real-time weather forecas
 ### Desktop
 ![Desktop](./Frontend/public/Desktop_Screenshot.png)
 
-### Weather Details
-
-
-
 ## 🎯 Project Overview
 
-**Ryuk Weather App** is a weather forecasting application that delivers a seamless user experience with:
+**Weather App** is a weather forecasting application that delivers a seamless user experience with:
 - 5-day weather forecasts
 - Hourly weather predictions
 - Real-time temperature, humidity, and wind speed data
@@ -30,8 +26,7 @@ A modern, full-stack weather application that provides real-time weather forecas
 - **Vite**
 - **Tailwind CSS**
 - **React Query**
-- **ESLint**
-
+- 
 ### Backend
 - **Express**
 - **Node.js**
@@ -52,7 +47,9 @@ A modern, full-stack weather application that provides real-time weather forecas
 
 ### Step 1: Clone or Extract Project
 ```bash
-cd Weather
+git clone https://github.com/ryuk069/Weather_App.git
+cd Weather_App
+code .
 ```
 
 ### Step 2: Setup Backend
@@ -71,16 +68,19 @@ npm install
 
 ## 🔐 Environment Variables
 
-### Backend (.env)
-```env
-api=YOUR_OPENWEATHERMAP_API_KEY
-```
-
 **How to get API key:**
 1. Visit [OpenWeatherMap](https://openweathermap.org/api)
 2. Sign up for a free account
 3. Generate an API key
 4. Add it to `.env`
+
+### Backend (.env)
+```env
+api=YOUR_OPENWEATHERMAP_API_KEY
+url="http://localhost:5173" #your frontend url
+PORT = 3000
+```
+
 
 ### Frontend (.env)
 ```env
@@ -101,10 +101,7 @@ VITE_API_BASE_URL=https://your-backend-url.com
 **Terminal 1 - Backend:**
 ```bash
 cd Backend
-npm start
-# or for watch mode
-npm install -g nodemon  # if not already installed
-nodemon index.js
+npm run dev
 ```
 Backend runs on: `http://localhost:3000`
 
@@ -121,22 +118,9 @@ Frontend runs on: `http://localhost:5173`
 ```bash
 cd Frontend
 npm run build
+npm run preview
 ```
 Output in `Frontend/dist/`
-
-**Backend Production:**
-```bash
-cd Backend
-node index.js
-```
-
-
-
-
-
-
-
-
 
 
 
